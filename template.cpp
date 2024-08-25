@@ -7,7 +7,9 @@ using namespace std;
 class Solusion{
 
     public:
-        Solusion(){
+        Solusion(int _testIndex)
+        : testIndex(_testIndex)
+        {
             readData();
             process();
         };
@@ -20,6 +22,7 @@ class Solusion{
 
         }
     public:
+    int testIndex;
         
 };
 
@@ -31,7 +34,7 @@ int main(){
     
     cin >> testNum;
     for (int test=0; test<testNum;test++){
-        Solusion solution;
+        Solusion solution(test);
     }
 
     return 0;
