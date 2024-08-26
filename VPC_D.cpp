@@ -1,13 +1,12 @@
 #include <iostream>
-#include <math.h>
 #include <stdio.h>
+#include <set>
+#include <map>
 #include <vector>
 #include <cmath>
 #include <algorithm>
-#include <set>
-#include <map>
 using namespace std;
-bool MULTI_TEST= false;  //Sử dụng nhiều tập test
+
 int Nmax;
 
 struct Point{
@@ -129,12 +128,12 @@ class Solusion{
             for(int i=0;i<group.size();i++){
                 // printf("%d->",group[i]);
                 int rootValue = getRoot(i);
-                setRoot.insert(getRoot(i));
+                setRoot.insert(rootValue);
                 if (mapGroup.find(rootValue)!=mapGroup.end()){
                     mapGroup[rootValue].push_back(i);
                 }else{
                     // vec = {i};
-                    
+
                     mapGroup.insert(make_pair(rootValue, vector<int> {i}));
                 }
             }
@@ -143,8 +142,84 @@ class Solusion{
                 res+=tree.at(index).value;
             }
             // cout<<"AAAAAAAA:"<<endl;
+            vector<Point> rootDistance;
+            int u,v;
             if(setRoot.size()>1){
-                res+=int(setRoot.size())*WValue;
+                //Tinh khoang cach cac cay con
+                group.clear();
+                group= vector<int> (inputN,-1);
+                for(auto it=setRoot.begin(); it!=setRoot.end(); it++){
+                    for(auto it2=it; it2!=setRoot.end(); it2++){
+                        u= *it;
+                        v= *it2;
+                        group[u]=u;
+                        if(u<v){
+                            Point p;
+                            p.x=u;
+                            p.y=v;
+                            p.value=1000'000'000;
+                            for (int indexU=0;indexU<mapGroup[u].size(); indexU++){
+                                 for (int indexV=0;indexV<mapGroup[v].size(); indexV++){
+                                    Point pA = listPoint.at(mapGroup[u].at(indexU));
+                                    Point pB = listPoint.at(mapGroup[v].at(indexV));
+                                    p.value = min(p.value, distance(pA, pB,CValue));
+
+                                 }
+                            }
+                            rootDistance.push_back(p);
+                        }
+                    }
+                }
+
+                // Xay dung cay khung moi
+                
+                int minIndex=0;
+                int index=0;
+                Point item;
+                tree.clear();
+                while (tree.size()<setRoot.size()-1)
+                {
+                    minIndex=0;
+                    index=0;
+                    while(index<rootDistance.size())
+                    {
+                        item = rootDistance.at(index);
+                        if(group[item.x]!=item.x){
+                            group[item.x]=getRoot(item.x);
+                        }
+                        if(group[item.y]!=item.y){
+                            group[item.y]=getRoot(item.y);
+                        }
+                        if(group[item.x]==group[item.y]){
+                            rootDistance.erase(rootDistance.begin()+index);
+                            continue;
+                        }
+                        if(item.value<rootDistance.at(minIndex).value){
+                            minIndex=index;
+                        }
+                        index++;    
+                        if(rootDistance.empty()){
+                            break;
+                        }
+                    }
+                    if(rootDistance.empty()){
+                        break;
+                    }
+                    item= rootDistance.at(minIndex);
+                    tree.push_back(item);
+                    int rootValue= min(getRoot(item.x), getRoot(item.y));
+                    group[getRoot(item.x)]=rootValue;
+                    group[getRoot(item.y)]=rootValue;
+                    // free[item.x]=true;
+                    // free[item.y]=true;
+                    rootDistance.erase(rootDistance.begin()+minIndex);
+                
+                }
+                double newRes=0;
+                for(size_t index=0;index<tree.size();index++){
+                                newRes+=tree.at(index).value;
+                }
+                res+=min(int(setRoot.size())*WValue, newRes);
             }
             // printf("Test %d output: ", testIndex);
             printf("%.10lf\n",res);
