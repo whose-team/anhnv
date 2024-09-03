@@ -1,3 +1,6 @@
 .*
 *.o
 *.dSYM*
+*.cmake
+Template/cmake-build-debug/
+Template/cmake-build-debug/*
