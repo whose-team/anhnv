@@ -1,0 +1,23 @@
+/snap/clion/292/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/292/bin/ninja/linux/x64/ninja -G Ninja -S /home/vtx/AnhNV_TemplateCpp/anhnv/TryTest_B3 -B /home/vtx/AnhNV_TemplateCpp/anhnv/TryTest_B3/cmake-build-debug
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (4.7s)
+CMake Error at CMakeLists.txt:8 (add_executable):
+  Cannot find source file:
+
+    input_b3_test.txt
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+  .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+  .f95 .f03 .hip .ispc
+
+
+CMake Error at CMakeLists.txt:8 (add_executable):
+  No SOURCES given to target: TryTest_B3
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

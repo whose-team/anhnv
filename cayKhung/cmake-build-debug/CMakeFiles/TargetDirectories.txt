@@ -1,0 +1,3 @@
+/home/vtx/AnhNV_TemplateCpp/anhnv/cayKhung/cmake-build-debug/CMakeFiles/cayKhung.dir
+/home/vtx/AnhNV_TemplateCpp/anhnv/cayKhung/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vtx/AnhNV_TemplateCpp/anhnv/cayKhung/cmake-build-debug/CMakeFiles/rebuild_cache.dir
