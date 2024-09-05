@@ -1,0 +1,7 @@
+/media/anhnv/IT1/WorkSpace/Cpp/anhnv/TryTest_B3/build/Desktop_Qt_6_7_2-Debug/CMakeFiles/TryTest_B3.dir
+/media/anhnv/IT1/WorkSpace/Cpp/anhnv/TryTest_B3/build/Desktop_Qt_6_7_2-Debug/CMakeFiles/edit_cache.dir
+/media/anhnv/IT1/WorkSpace/Cpp/anhnv/TryTest_B3/build/Desktop_Qt_6_7_2-Debug/CMakeFiles/rebuild_cache.dir
+/media/anhnv/IT1/WorkSpace/Cpp/anhnv/TryTest_B3/build/Desktop_Qt_6_7_2-Debug/CMakeFiles/list_install_components.dir
+/media/anhnv/IT1/WorkSpace/Cpp/anhnv/TryTest_B3/build/Desktop_Qt_6_7_2-Debug/CMakeFiles/install.dir
+/media/anhnv/IT1/WorkSpace/Cpp/anhnv/TryTest_B3/build/Desktop_Qt_6_7_2-Debug/CMakeFiles/install/local.dir
+/media/anhnv/IT1/WorkSpace/Cpp/anhnv/TryTest_B3/build/Desktop_Qt_6_7_2-Debug/CMakeFiles/install/strip.dir

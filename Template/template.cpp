@@ -29,7 +29,7 @@ int main(){
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
     
-    cin >> testNum;
+    // cin >> testNum;
     for (int test=0; test<testNum;test++){
         Solusion solution(test);        
     }
